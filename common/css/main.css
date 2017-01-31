@@ -3,7 +3,7 @@ html{ background:#bbb; height:100%; }
 body{ margin:0; position:relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; height:100%; }
 div{ overflow:hidden; position:relative; }
 iframe{ position:absolute; width:400%; height:400%; zoom: 0.25; -moz-transform: scale(0.25); -moz-transform-origin: 0 0; -o-transform: scale(0.25); -o-transform-origin: 0 0; -webkit-transform: scale(0.25); -webkit-transform-origin: 0 0; }
-.overlay{ -webkit-box-sizing: border-box; -moz-box-sizing: border-box; font-weight:bolder; position: absolute; top: 0; right: 0; width: 100%; padding:4px 0 0 130px; height: 100%; color: transparent; font-family: sans-serif; color: #fff; pointer-events: none; }
+.overlay{ display: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; font-weight:bolder; position: absolute; top: 0; right: 0; width: 100%; padding:4px 0 0 130px; height: 100%; color: transparent; font-family: sans-serif; color: #fff; pointer-events: none; }
 .wallboard .overlay { top:auto; height:auto; right:2px; bottom:2px; text-align:right; font-size:9px; }
 .wallboard .overlay a,.wallboard .overlay a:visited{ color:#6cc; }
 .resizeable { width:50%; position:absolute;	 }
