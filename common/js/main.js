@@ -1,19 +1,19 @@
 function loadPage(page, url){
 	if(page == 1 && url != ""){
 		frame1.src = url;
-		setLocalStorage('frame1', url, 30);
+		setLocalStorage('frame1', url);
 	}
 	else if(page == 2 && url != ""){
 		frame2.src = url;
-		setLocalStorage('frame2', url, 30);
+		setLocalStorage('frame2', url);
 	}
 	else if(page == 3 && url != ""){
 		frame3.src = url;
-		setLocalStorage('frame3', url, 30);
+		setLocalStorage('frame3', url);
 	}
 	else if(page == 4 && url != ""){
 		frame4.src = url;
-		setLocalStorage('frame4', url, 30);
+		setLocalStorage('frame4', url);
 	}
 }
 
