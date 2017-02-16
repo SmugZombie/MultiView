@@ -1,0 +1,30 @@
+* {transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -o-transition: all .3s; zoom: reset;}
+html{ background:#bbb; height:100%; }
+body{ margin:0; position:relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; height:100%; }
+div{ overflow:hidden; position:relative; }
+iframe{ position:absolute; height: 100%; width: 100%; overflow: hidden; }
+.overlay{ display: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; font-weight:bolder; position: absolute; top: 0; right: 0; width: 100%; padding:4px 0 0 130px; height: 100%; color: transparent; font-family: sans-serif; color: #fff; pointer-events: none; }
+.wallboard .overlay { top:auto; height:auto; right:2px; bottom:2px; text-align:right; font-size:9px; }
+.wallboard .overlay a,.wallboard .overlay a:visited{ color:#6cc; }
+.resizeable { width:50%; position:absolute;	 }
+.top-left { height:50%; top:0; left:0; }
+.bottom-left { height:50%; top:50%; left:0; }
+.top-right { height:50%; top:0; right:0; }
+.bottom-right { height:50%; top:50%; right:0; }
+.top { left:0; right:100; top:0; height: 100%; width:100%; }
+div.max { left:0; right:auto; top:0; height:100%; }
+div.min { right:0; left:auto; height: 50%; }
+div.min0 { top:0; }
+div.min1 { top: 50%; }
+div.min2 { top: 100%; }
+.bottom { position:absolute; bottom:0; left:0; width: 100%; height: 35%; }
+.config{ display: none; }
+.minmax{float:right;display:block;height:30px;width:26px;color:transparent;cursor:pointer; pointer-events: all;}
+.overlay:hover .minmax{color:#fff;}
+.minmax::after{line-height:1;font-family:monospace;white-space:pre;content:'\2554\20\2557\A\20\00d7\20\A\255a\20\255d'}
+.max .minmax::after{height:30px;width:20px;content:'\2554\2557\A\255a\255d'}
+#frame1config{ position: absolute; top: 40%; left: 20px; }
+#frame2config{ position: absolute; bottom: 40%; left: 20px; }
+#frame3config{ position: absolute; top: 40%; right: 20px; }
+#frame4config{ position: absolute; bottom: 40%; right: 20px; }
+#configbutton{ position: absolute; bottom: 0px; left: 0px; }

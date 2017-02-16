@@ -1,4 +1,3 @@
-
 customKey = location.search.split('key=')[1];
 if(!customKey){
 	customKey = "";
@@ -7,27 +6,22 @@ if(!customKey){
 function loadPage(page, url){
 	if(page == 1 && url != ""){
 		frame1.src = url;
-		setLocalStorage('frame1'+customKey, url);
+		setLocalStorage('frame1_3frame'+customKey, url);
 	}
 	else if(page == 2 && url != ""){
 		frame2.src = url;
-		setLocalStorage('frame2'+customKey, url);
+		setLocalStorage('frame2_3frame'+customKey, url);
 	}
 	else if(page == 3 && url != ""){
 		frame3.src = url;
-		setLocalStorage('frame3'+customKey, url);
-	}
-	else if(page == 4 && url != ""){
-		frame4.src = url;
-		setLocalStorage('frame4'+customKey, url);
+		setLocalStorage('frame3_3frame'+customKey, url);
 	}
 }
 
 function gridLoader(){
-	var frame1cookie = getLocalStorage('frame1'+customKey);
-	var frame2cookie = getLocalStorage('frame2'+customKey);
-	var frame3cookie = getLocalStorage('frame3'+customKey);
-	var frame4cookie = getLocalStorage('frame4'+customKey);
+	var frame1cookie = getLocalStorage('frame1_3frame'+customKey);
+	var frame2cookie = getLocalStorage('frame2_3frame'+customKey);
+	var frame3cookie = getLocalStorage('frame3_3frame'+customKey);
 	var defaultpage = "/notconfigured.html";
 
 	if(frame1cookie){
@@ -44,11 +38,6 @@ function gridLoader(){
 		frame3.src = frame3cookie;
 		url3.value = frame3cookie;
 	}else{ frame3.src = defaultpage; }
-
-	if(frame4cookie){
-		frame4.src = frame4cookie;
-		url4.value = frame4cookie;
-	}else{ frame4.src = defaultpage; }
 }
 
 /* Local Storage Functions - https://gist.github.com/SmugZombie/df4213faab7c33bae26b  */
