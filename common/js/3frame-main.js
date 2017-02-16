@@ -22,7 +22,7 @@ function gridLoader(){
 	var frame1cookie = getLocalStorage('frame1_3frame'+customKey);
 	var frame2cookie = getLocalStorage('frame2_3frame'+customKey);
 	var frame3cookie = getLocalStorage('frame3_3frame'+customKey);
-	var defaultpage = "/notconfigured.html";
+	var defaultpage = "./notconfigured.html";
 
 	if(frame1cookie){
 		frame1.src = frame1cookie;

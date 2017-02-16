@@ -28,7 +28,7 @@ function gridLoader(){
 	var frame2cookie = getLocalStorage('frame2'+customKey);
 	var frame3cookie = getLocalStorage('frame3'+customKey);
 	var frame4cookie = getLocalStorage('frame4'+customKey);
-	var defaultpage = "/notconfigured.html";
+	var defaultpage = "./notconfigured.html";
 
 	if(frame1cookie){
 		frame1.src = frame1cookie;
