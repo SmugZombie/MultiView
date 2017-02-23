@@ -1,0 +1,74 @@
+customKey = location.search.split('key=')[1];
+if(!customKey){
+	customKey = "";
+}
+
+function loadPage(page, url){
+	if(page == 1 && url != ""){
+		frame1.src = url;
+		setLocalStorage('frame1_stacked'+customKey, url);
+	}
+	else if(page == 2 && url != ""){
+		frame2.src = url;
+		setLocalStorage('frame2_stacked'+customKey, url);
+	}
+}
+
+function gridLoader(){
+	var frame1cookie = getLocalStorage('frame1_stacked'+customKey);
+	var frame2cookie = getLocalStorage('frame2_stacked'+customKey);
+	var defaultpage = "./notconfigured.html";
+
+	if(frame1cookie){
+		frame1.src = frame1cookie;
+		url1.value = frame1cookie;
+	}else{ frame1.src = defaultpage; }
+
+	if(frame2cookie){
+		frame2.src = frame2cookie;
+		url2.value = frame2cookie;
+	}else{ frame2.src = defaultpage; }
+}
+
+/* Local Storage Functions - https://gist.github.com/SmugZombie/df4213faab7c33bae26b  */
+function getLocalStorage(name){ 
+    now = parseInt(new Date() / 1000);
+    expires = localStorage.getItem(name+"_expire");
+    if(!expires){ return localStorage.getItem(name); }  
+    else if(now >= expires){ localStorage.removeItem(name+"_expire"); localStorage.removeItem(name); return ""; }
+    else{ return localStorage.getItem(name); }   
+}
+
+function setLocalStorage(name, value, minutes){ 
+    if(minutes == null){ localStorage.setItem(name, value); localStorage.removeItem(name+"_expire"); return true} // No set expiration
+    else if(minutes == 0){ localStorage.removeItem(name); localStorage.removeItem(name+"_expire"); return true} // Setting to 0 kills the localStorage Item any any expiration
+    else{ 
+        epochExpire = parseInt(new Date() / 1000 + (minutes * 60));
+        localStorage.setItem(name, value); localStorage.setItem(name+"_expire", epochExpire); 
+        return true
+    }
+    return false
+}
+
+$('.minmax').click(function(){
+	if ($(this).parent().parent().hasClass('max')) {
+		$('.resizeable').removeClass('max min min0 min1 min2');
+	} else {
+		$('.resizeable').removeClass('max min min0 min1 min2');
+		$('.resizeable').addClass('min');
+		$(this).parent().parent().removeClass('min').addClass('max');
+	}
+	$('.min').each(function(i){
+		$(this).addClass('min'+i);
+	});
+});
+
+window.setInterval(function(){
+	$('.resizeable iframe').each(function(){
+	  $(this).prependTo($(this).parent());
+	});
+}, 240000);
+
+// Make user click ok to leave page
+window.onbeforeunload = function() { return false; }
+gridLoader();
