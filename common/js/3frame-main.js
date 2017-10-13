@@ -80,5 +80,5 @@ window.setInterval(function(){
 }, 240000);
 
 // Make user click ok to leave page
-window.onbeforeunload = function() { return false; }
+// window.onbeforeunload = function() { return false; }
 gridLoader();
